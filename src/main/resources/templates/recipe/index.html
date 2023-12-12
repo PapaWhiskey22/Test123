@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+    <head th:replace="~{header :: head}"></head>
+
+    <body>
+        <div th:replace="~{header :: page-header}"></div>
+
+        <div class="container body-content">
+            <h2>Recipes</h2>
+            <ul>
+                <li th:each="recipe : ${recipes}">
+                    <a th:href="@{'/recipes/view/' + ${recipe.id}}" th:text="${recipe.getName()}"></a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
